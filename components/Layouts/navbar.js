@@ -1,45 +1,52 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import Router, { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import Styles from "./navber.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { Menu } from "antd";
+import { Menu, ConfigProvider } from "antd";
 
 export default function Navbar({ type = "" }) {
+  const router = useRouter();
   const [isActive, setIsActive] = useState(false);
 
-  function getItem(label, key, icon, children, type) {
+  function getItem(label, key, icon, children, type, url) {
     return {
       key,
       icon,
       children,
       label,
       type,
+      url,
     };
   }
 
   const items = [
     getItem(
       "最新消息",
-      null // No icon for this item
+      "sub1",
+      null, // No icon for this item
+      null,
+      null,
+      "https://www.facebook.com/broscoffeeshop/"
     ),
     getItem(
       "所有商品",
       "sub2",
       null, // No icon for this item
       [
-        getItem("咖啡飲品", "5"),
-        getItem("糕點", "6"),
-        getItem("周邊商品", "sub3", null, [getItem("Option 7", "7"), getItem("Option 8", "8")]),
+        getItem("咖啡飲品", "5", null, null, null, "/"),
+        getItem("糕點", "6", null, null, null, "/"),
+        getItem("周邊商品", "sub3", null, [getItem("Option 7", "7"), getItem("Option 8", "8")], null, "/"),
       ]
     ),
     getItem(
       "門市資訊",
       "sub4",
       null, // No icon for this item
-      [getItem("找門市", "9"), getItem("找菜單", "10")]
+      [getItem("找門市", "9", null, null, null, "/"), getItem("找菜單", "10", null, null, null, "/")]
     ),
   ];
 
@@ -125,30 +132,48 @@ export default function Navbar({ type = "" }) {
           </div>
         </nav>
       </header>
-      <Menu
-        className={`${Styles.accordion} ${isActive ? Styles.active : ""}`}
-        mode='inline'
-        openKeys={openKeys}
-        onOpenChange={onOpenChange}
-        style={{
-          width: 256,
-          height: "100vh",
+      <ConfigProvider
+        theme={{
+          components: {
+            Menu: {
+              /* here is your component tokens */
+              itemHoverColor: "#ff6347",
+              itemActiveBg: "none",
+              itemSelectedBg: "none",
+              itemSelectedColor: "rgba(0, 0, 0, 0.88)",
+            },
+          },
         }}
       >
-        {items.map((item) =>
-          item.children ? (
-            <Menu.SubMenu key={item.key} icon={item.icon} title={item.label}>
-              {item.children.map((subItem) => (
-                <Menu.Item key={subItem.key}>{subItem.label}</Menu.Item>
-              ))}
-            </Menu.SubMenu>
-          ) : (
-            <Menu.Item key={item.key} icon={item.icon}>
-              {item.label}
-            </Menu.Item>
-          )
-        )}
-      </Menu>
+        <Menu
+          className={`${Styles.accordion} ${isActive ? Styles.active : ""}`}
+          mode='inline'
+          openKeys={openKeys}
+          onOpenChange={onOpenChange}
+          style={{
+            width: 256,
+            height: "100vh",
+          }}
+        >
+          {items.map((item) =>
+            item.children ? (
+              <Menu.SubMenu key={item.key} icon={item.icon} title={item.label}>
+                {item.children.map((subItem) => (
+                  <Menu.Item key={subItem.key} onClick={() => router.push(subItem.url)}>
+                    {subItem.label}
+                  </Menu.Item>
+                ))}
+              </Menu.SubMenu>
+            ) : (
+              <Menu.Item key={item.key} icon={item.icon} onClick={() => router.push(item.url)}>
+                {item.label}
+              </Menu.Item>
+            )
+          )}
+        </Menu>
+      </ConfigProvider>
+
+      <div className={`${Styles.darkWrap} ${isActive ? Styles.active : ""}`}></div>
     </>
   );
 }
