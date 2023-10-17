@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap");
 
 :root {
-
-	/* color */
-	--white: #fff;
-  --dark: #222222;
+  /* color */
+  --white: #fff;
+  --dark: #333333;
   --secondary: #404040;
   --bg: #cdc6c0;
   --bgGray: #e5e5e5;
@@ -12,75 +12,152 @@
   --ltOrg: #ff6347;
   --ltYellow: #fea200;
   --brown: #553e2e;
-	--gray: #7a7a7a;
-	--ltGary: #DDDDDD;
+  --gray: #7a7a7a;
+  --ltGary: #dddddd;
 
-	/* font-size */
-	--h1fs36:2.25rem;
-	--h2fs32:2rem;
-	--h3fs28:1.75rem;
-	--h4fs24:1.5rem;
-	--h5fs20:1.25rem;
-	--h6fs18:1.125rem;
-	--pfs16:1rem;
-	--pfs14:0.875rem;
-	--pfs12:.75rem;
-	/* font-weight */
-	--fwbold: bold;
-	/* border-radius */
-	--br20: 20px;
-	--br10: 10px;
-	--br8: 8px;
+  /* font-size */
+  --h1fs36: 2.25rem;
+  --h2fs32: 2rem;
+  --h3fs28: 1.75rem;
+  --h4fs24: 1.5rem;
+  --h5fs20: 1.25rem;
+  --h6fs18: 1.125rem;
+  --pfs16: 1rem;
+  --pfs14: 0.875rem;
+  --pfs12: 0.75rem;
+  /* font-weight */
+  --fwbold: bold;
+  /* border-radius */
+  --br20: 20px;
+  --br10: 10px;
+  --br8: 8px;
 
-/* padding */
---p8:0.5rem;
---p16:1rem;
---p24:1.5rem;
---p32:2rem;
+  /* padding */
+  --p8: 0.5rem;
+  --p16: 1rem;
+  --p24: 1.5rem;
+  --p32: 2rem;
 
-	/* shadow */
-	--shadow: 0 0 15px rgba(128, 128, 128, 0.452);
-	--fontCT:'Noto Sans TC';
+  /* shadow */
+  --shadow: 0 0 15px rgba(128, 128, 128, 0.452);
+  --fontCT: "Noto Sans TC";
+  --fontSerif: 'Noto Serif TC', serif;
 }
 
-html,body{
+html,
+body {
   height: 100%;
-	line-height: 1;
+  line-height: 1;
   color: var(--dark);
-  font-family: var(--fontCT);
+  font-family: var(--fontSerif);
   letter-spacing: 1px;
   font-size: 16px;
-	max-width: 100vw;
+  max-width: 100vw;
 }
 
-#__next{
-	height: 100%;
+#__next {
+  height: 100%;
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
   /* color: var(--dark-gray); */
-	vertical-align: baseline;
+  vertical-align: baseline;
   box-sizing: border-box;
 }
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: normal;
 }
-ol, ul, li {
+ol,
+ul,
+li {
   list-style: none;
 }
 table {
@@ -89,7 +166,16 @@ table {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
