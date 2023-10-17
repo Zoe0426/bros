@@ -17,13 +17,15 @@ export default function Home() {
       </section>
       <section className={Styles.story}>
         <div className={Styles.storyInfo}>
-          <div className={Styles.title}>品牌精神<span>OUR STORY</span></div>
+          <div className={Styles.title}>
+            <p>品牌精神</p>
+            <p>OUR STORY</p>
+          </div>
           <div className={Styles.text}>
             <p>用咖啡開啟美好生活</p>
             <p>Have a nice day</p>
           </div>
         </div>
-        <div className={Styles.storyImg}></div>
       </section>
     </>
   );

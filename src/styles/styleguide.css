@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=The+Nautigal&display=swap");
 
 :root {
   /* color */
@@ -40,8 +41,10 @@
 
   /* shadow */
   --shadow: 0 0 15px rgba(128, 128, 128, 0.452);
+  /* font-family */
   --fontCT: "Noto Sans TC";
-  --fontSerif: 'Noto Serif TC', serif;
+  --fontSerif: "Noto Serif TC", serif;
+  --fontCursive: "The Nautigal", cursive;
 }
 
 html,

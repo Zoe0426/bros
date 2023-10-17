@@ -11,7 +11,20 @@ import { Menu, ConfigProvider } from "antd";
 export default function Navbar({ type = "" }) {
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
+  //監聽scrollPos
+  useEffect(() => {
+    const onScroll = (e) => {
+      setScrollPosition(e.target.documentElement.scrollTop);
+    };
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const navIndexClass = scrollPosition >= 250 ? Styles.active : "";
+
+  // 手機導航menu
   function getItem(label, key, icon, children, type, url) {
     return {
       key,
@@ -66,7 +79,7 @@ export default function Navbar({ type = "" }) {
   };
   return (
     <>
-      <header className={Styles.header}>
+      <header className={`${Styles.header} ${navIndexClass}`}>
         <nav className={Styles.navbar}>
           <div className={Styles.logo}>
             <button className={Styles.navToggler} onClick={handleClick}>

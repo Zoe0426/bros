@@ -6,7 +6,12 @@
   width: 100%;
   padding: 0 100px;
   height: 75px;
+  transition: all 0.5s ease;
   z-index: 9;
+}
+
+.header.active {
+  background-color: var(--dark);
 }
 
 .navbar {
@@ -55,7 +60,7 @@
   left: 0;
   background-color: var(--dark);
   width: 180px;
-  border-radius:  var(--br10);
+  border-radius: var(--br10);
   padding: var(--p16);
   display: none;
 }
@@ -97,6 +102,12 @@
 .iconUser {
   color: var(--white);
   font-size: var(--h6fs18);
+  transition: all 0.3s ease;
+}
+
+.iconCart:hover,
+.iconUser:hover {
+  color: var(--ltOrg);
 }
 
 .darkWrap {

@@ -23,7 +23,7 @@ export default function Footer() {
             <FontAwesomeIcon icon={faLine} className={Styles.socialMedia} />
           </li>
         </div>
-        <div className='copyRight'>
+        <div className={Styles.copyRight}>
           <p>© 2023 BrosCoffee. All rights reserved. Design by Gabrielle</p>
         </div>
       </footer>
