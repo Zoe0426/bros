@@ -45,6 +45,18 @@
   --fontCT: "Noto Sans TC";
   --fontSerif: "Noto Serif TC", serif;
   --fontCursive: "The Nautigal", cursive;
+
+  /* swiper */
+  --swiper-navigation-size: 44px;
+  --swiper-navigation-top-offset: 50%;
+  --swiper-navigation-sides-offset: 10px;
+  --swiper-navigation-color: var(--white);
+
+  --swiper-pagination-color: var(--white);
+	--swiper-pagination-bullet-size: 10px;
+  --swiper-pagination-bullet-width: 10px;
+  --swiper-pagination-bullet-height: 10px;
+  --swiper-pagination-bullet-inactive-color: var(--white);
 }
 
 html,

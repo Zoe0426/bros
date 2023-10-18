@@ -12,6 +12,7 @@ export default function Navbar({ type = "" }) {
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  
 
   //監聽scrollPos
   useEffect(() => {
@@ -22,7 +23,10 @@ export default function Navbar({ type = "" }) {
 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  
   const navIndexClass = scrollPosition >= 250 ? Styles.active : "";
+  
 
   // 手機導航menu
   function getItem(label, key, icon, children, type, url) {
