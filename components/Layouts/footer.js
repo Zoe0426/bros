@@ -24,7 +24,7 @@ export default function Footer() {
           </li>
         </div>
         <div className={Styles.copyRight}>
-          <p>© 2023 BrosCoffee. All rights reserved. Design by Gabrielle</p>
+          <p>© 2023 BrosCoffee. 此網站為練習作品，並無營業用途，來源參考湛盧咖啡 https://www.zhanlu.com.tw/</p>
         </div>
       </footer>
     </>

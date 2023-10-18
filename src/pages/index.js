@@ -1,9 +1,7 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import Link from "next/link";
 import Styles from "@/styles/index.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -15,6 +13,7 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 export default function Home() {
   const [is1024, setIs1024] = useState({ width: window.innerWidth });
 
+  // 監聽視窗大小
   useEffect(() => {
     const handleResize = () => {
       setIs1024({ width: window.innerWidth });
@@ -65,34 +64,54 @@ export default function Home() {
           className={Styles.mySwiper}
         >
           <SwiperSlide>
-            <img src='/大安門市.jpg' alt='' className={Styles.slideImg} />
+            <Link href='/'>
+              <img src='/大安門市.jpg' alt='' className={Styles.slideImg} />
+            </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <img src='/台大門市.jpg' alt='' className={Styles.slideImg} />
+            <Link href='/'>
+              <img src='/台大門市.jpg' alt='' className={Styles.slideImg} />
+            </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <img src='/市府門市.jpg' alt='' className={Styles.slideImg} />
+            <Link href='/'>
+              <img src='/市府門市.jpg' alt='' className={Styles.slideImg} />
+            </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <img src='/瑞光門市.jpg' alt='' className={Styles.slideImg} />
+            <Link href='/'>
+              <img src='/瑞光門市.jpg' alt='' className={Styles.slideImg} />
+            </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <img src='/高雄門市.jpg' alt='' className={Styles.slideImg} />
+            <Link href='/'>
+              <img src='/高雄門市.jpg' alt='' className={Styles.slideImg} />
+            </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <img src='/大安門市.jpg' alt='' className={Styles.slideImg} />
+            <Link href='/'>
+              <img src='/大安門市.jpg' alt='' className={Styles.slideImg} />
+            </Link>
+          </SwiperSlide> 
+          <SwiperSlide>
+            <Link href='/'>
+              <img src='/台大門市.jpg' alt='' className={Styles.slideImg} />
+            </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <img src='/台大門市.jpg' alt='' className={Styles.slideImg} />
+            <Link href='/'>
+              <img src='/市府門市.jpg' alt='' className={Styles.slideImg} />
+            </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <img src='/市府門市.jpg' alt='' className={Styles.slideImg} />
+            <Link href='/'>
+              <img src='/瑞光門市.jpg' alt='' className={Styles.slideImg} />
+            </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <img src='/瑞光門市.jpg' alt='' className={Styles.slideImg} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src='/高雄門市.jpg' alt='' className={Styles.slideImg} />
+            <Link href='/'>
+              <img src='/高雄門市.jpg' alt='' className={Styles.slideImg} />
+            </Link>
           </SwiperSlide>
         </Swiper>
       </section>

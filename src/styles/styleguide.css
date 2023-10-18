@@ -49,7 +49,7 @@
   /* swiper */
   --swiper-navigation-size: 44px;
   --swiper-navigation-top-offset: 50%;
-  --swiper-navigation-sides-offset: 10px;
+  --swiper-navigation-sides-offset: 20px;
   --swiper-navigation-color: var(--white);
 
   --swiper-pagination-color: var(--white);
