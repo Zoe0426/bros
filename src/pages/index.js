@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Styles from "@/styles/index.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import ProductItem from "../../components/UI/productItem";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,7 +12,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 export default function Home() {
-  const [is1024, setIs1024] = useState({ width: window.innerWidth });
+  const [is1024, setIs1024] = useState({ width: undefined });
 
   // 監聽視窗大小
   useEffect(() => {
@@ -92,7 +93,7 @@ export default function Home() {
             <Link href='/'>
               <img src='/大安門市.jpg' alt='' className={Styles.slideImg} />
             </Link>
-          </SwiperSlide> 
+          </SwiperSlide>
           <SwiperSlide>
             <Link href='/'>
               <img src='/台大門市.jpg' alt='' className={Styles.slideImg} />
@@ -114,6 +115,32 @@ export default function Home() {
             </Link>
           </SwiperSlide>
         </Swiper>
+      </section>
+      <section className={Styles.bgColour}>
+        <h2 className={Styles.title}>產品介紹</h2>
+      </section>
+      <section className={Styles.product1}>
+        {/* 兩個bcgimage交換 */}
+        <div className='img'></div>
+        <div className='img'></div>
+        <div className={Styles.info}>
+          {/* <div className={Styles.productItem}>
+            <Link href='/'>
+              <div className={Styles.productBtn}>配方豆</div>
+            </Link>
+            <p className={Styles.productText}>甜蜜烘焙 獨家風味</p>
+          </div> */}
+          <ProductItem text="甜蜜烘焙 獨家風味" title="配方豆" bgc="#808080" link="/"/>
+          <ProductItem text="風味旅程 當季首選" title="單品豆" bgc="#4D4D4D" link="/"/>
+          <ProductItem text="出類拔萃 一時之選" title="極精品豆" bgc="#1A1A1A" link="/"/>
+        </div>
+      </section>
+      <section className={Styles.product2}>
+      <div className={Styles.info}>
+          <ProductItem text="頂尖之作 餘韻不斷" title="行家系列" bgc="#808080" link="/"/>
+          <ProductItem text="狂銷熱賣 小資首選" title="經典系列" bgc="#4D4D4D" link="/"/>
+          <ProductItem text="繽紛風味 簡單享受" title="單品系列" bgc="#1A1A1A" link="/"/>
+        </div>
       </section>
     </>
   );

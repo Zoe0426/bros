@@ -1,0 +1,16 @@
+.productBtn {
+  width: 193px;
+  height: 57px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--h3fs28);
+  letter-spacing: 2px;
+  border-radius: 50px;
+	color: var(--white);
+	transition: all .3s ease;
+}
+
+.productBtn:hover {
+  transform: scale(0.9);
+}

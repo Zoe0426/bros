@@ -1,0 +1,13 @@
+.productItem {
+  width: 550px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.productItem p {
+  width: 300px;
+  font-size: var(--h3fs28);
+  letter-spacing: 1px;
+}
