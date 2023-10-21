@@ -14,3 +14,10 @@
 .productBtn:hover {
   transform: scale(0.9);
 }
+
+@media screen and (max-width: 767px) {
+  .productBtn{
+    width: 130px;
+    font-size: var(--h6fs18);
+  }
+}
