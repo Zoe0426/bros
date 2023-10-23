@@ -147,11 +147,99 @@
   width: 50%;
   position: absolute;
   left: 0;
-  bottom: 35%;
+  bottom: 40%;
 }
 
 .infosm {
   display: none;
+}
+
+.productItem {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+.productItem p {
+  /* width: 100%; */
+  font-size: var(--h3fs28);
+  letter-spacing: 1px;
+  margin-left: 5%;
+}
+
+.slideInLeft {
+  animation-name: slideInLeft;
+  animation-duration: 1s; /* 你可以調整動畫時間 */
+  animation-fill-mode: both;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1s; /* 你可以調整動畫時間 */
+  animation-fill-mode: both;
+}
+
+.rotateInL {
+  animation-name: rotateInL;
+  animation-duration: 1s; /* 你可以調整動畫時間 */
+  animation-fill-mode: both;
+}
+
+.rotateInR {
+  animation-name: rotateInR;
+  animation-duration: 1s; /* 你可以調整動畫時間 */
+  animation-fill-mode: both;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotateInL {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: right bottom;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes rotateInR {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate3d(0, 0, 1, -45deg);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: left bottom;
+    transform: none;
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -162,7 +250,7 @@
   .product1,
   .product2 {
     height: 90vw;
-		background-color: #ded7d1;
+    background-color: #ded7d1;
   }
 
   .product1 .img {
@@ -201,8 +289,7 @@
     justify-content: flex-start;
     padding-top: 20px;
   }
-
-	.infosm{
-
-	}
+  .productItem p {
+    font-size: var(--h6fs18);
+  }
 }

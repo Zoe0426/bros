@@ -197,3 +197,7 @@ nav,
 section {
   display: block;
 }
+
+.scrollLock{
+  overflow: hidden;
+}

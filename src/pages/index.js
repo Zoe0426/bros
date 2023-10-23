@@ -4,15 +4,47 @@ import Link from "next/link";
 import Styles from "@/styles/index.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ProductItem from "../../components/UI/productItem";
+import ProductBtn from "../../components/UI/productBtn";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 // import required modules
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import VisibilitySensor from "react-visibility-sensor";
 
 export default function Home() {
   const [is1024, setIs1024] = useState({ width: undefined });
+  const [isVisible1, setIsVisible1] = useState(false);
+  const [isVisible2, setIsVisible2] = useState(false);
+  const [isVisible3, setIsVisible3] = useState(false);
+  const [isVisible4, setIsVisible4] = useState(false);
+  const [isVisible5, setIsVisible5] = useState(false);
+  const [isVisible6, setIsVisible6] = useState(false);
+
+  const onChange1 = (isVisible) => {
+    if (isVisible) setIsVisible1(true);
+  };
+
+  const onChange2 = (isVisible) => {
+    if (isVisible) setIsVisible2(true);
+  };
+
+  const onChange3 = (isVisible) => {
+    if (isVisible) setIsVisible3(true);
+  };
+
+  const onChange4 = (isVisible) => {
+    if (isVisible) setIsVisible4(true);
+  };
+
+  const onChange5 = (isVisible) => {
+    if (isVisible) setIsVisible5(true);
+  };
+
+  const onChange6 = (isVisible) => {
+    if (isVisible) setIsVisible6(true);
+  };
 
   // 監聽視窗大小
   useEffect(() => {
@@ -24,7 +56,7 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const smSlidePerView = is1024.width < 1024 ? true : false;
+  const smSlidePerView = is1024.width <= 1024 ? true : false;
 
   return (
     <>
@@ -123,28 +155,136 @@ export default function Home() {
         {/* 兩個bcgimage交換 */}
         <div className={Styles.img}></div>
         <div className={Styles.info}>
-          <ProductItem text='甜蜜烘焙 獨家風味' title='配方豆' bgc='#808080' link='/' />
-          <ProductItem text='風味旅程 當季首選' title='單品豆' bgc='#4D4D4D' link='/' />
-          <ProductItem text='出類拔萃 一時之選' title='極精品豆' bgc='#1A1A1A' link='/' />
+          <VisibilitySensor onChange={onChange1} offset={{ top: 10 }} delayedCall partialVisibility>
+            <div className={isVisible1 ? `${Styles.productItem} ${Styles.show}` : Styles.productItem}>
+              <div className={isVisible1 ? `${Styles.btnWrap} ${Styles.slideInLeft}` : Styles.btnWrap}>
+                <ProductBtn title='配方豆' bgc='#808080' link='/' />
+              </div>
+              <p className={isVisible1 ? `${Styles.productText} ${Styles.fadeIn}` : Styles.productText}>
+                甜蜜烘焙 獨家風味
+              </p>
+            </div>
+          </VisibilitySensor>
+          <VisibilitySensor onChange={onChange2} offset={{ top: 10 }} delayedCall partialVisibility>
+            <div className={isVisible2 ? `${Styles.productItem} ${Styles.show}` : Styles.productItem}>
+              <div className={isVisible2 ? `${Styles.btnWrap} ${Styles.slideInLeft}` : Styles.btnWrap}>
+                <ProductBtn title='單品豆' bgc='#4d4d4d' link='/' />
+              </div>
+              <p className={isVisible2 ? `${Styles.productText} ${Styles.fadeIn}` : Styles.productText}>
+                風味旅程 當季首選
+              </p>
+            </div>
+          </VisibilitySensor>
+          <VisibilitySensor onChange={onChange3} offset={{ top: 10 }} delayedCall partialVisibility>
+            <div className={isVisible3 ? `${Styles.productItem} ${Styles.show}` : Styles.productItem}>
+              <div className={isVisible3 ? `${Styles.btnWrap} ${Styles.slideInLeft}` : Styles.btnWrap}>
+                <ProductBtn title='極精品豆' bgc='#1a1a1a' link='/' />
+              </div>
+              <p className={isVisible3 ? `${Styles.productText} ${Styles.fadeIn}` : Styles.productText}>
+                出類拔萃 一時之選
+              </p>
+            </div>
+          </VisibilitySensor>
         </div>
       </section>
       <div className={Styles.infosm}>
-        <ProductItem text='甜蜜烘焙 獨家風味' title='配方豆' bgc='#808080' link='/' />
-        <ProductItem text='風味旅程 當季首選' title='單品豆' bgc='#4D4D4D' link='/' />
-        <ProductItem text='出類拔萃 一時之選' title='極精品豆' bgc='#1A1A1A' link='/' />
+        <VisibilitySensor onChange={onChange1} offset={{ top: 10 }} delayedCall partialVisibility>
+          <div className={isVisible1 ? `${Styles.productItem} ${Styles.show}` : Styles.productItem}>
+            <div className={isVisible1 ? `${Styles.btnWrap} ${Styles.slideInLeft}` : Styles.btnWrap}>
+              <ProductBtn title='配方豆' bgc='#808080' link='/' />
+            </div>
+            <p className={isVisible1 ? `${Styles.productText} ${Styles.fadeIn}` : Styles.productText}>
+              甜蜜烘焙 獨家風味
+            </p>
+          </div>
+        </VisibilitySensor>
+        <VisibilitySensor onChange={onChange2} offset={{ top: 10 }} delayedCall partialVisibility>
+          <div className={isVisible2 ? `${Styles.productItem} ${Styles.show}` : Styles.productItem}>
+            <div className={isVisible2 ? `${Styles.btnWrap} ${Styles.slideInLeft}` : Styles.btnWrap}>
+              <ProductBtn title='單品豆' bgc='#4d4d4d' link='/' />
+            </div>
+            <p className={isVisible2 ? `${Styles.productText} ${Styles.fadeIn}` : Styles.productText}>
+              風味旅程 當季首選
+            </p>
+          </div>
+        </VisibilitySensor>
+        <VisibilitySensor onChange={onChange3} offset={{ top: 10 }} delayedCall partialVisibility>
+          <div className={isVisible3 ? `${Styles.productItem} ${Styles.show}` : Styles.productItem}>
+            <div className={isVisible3 ? `${Styles.btnWrap} ${Styles.slideInLeft}` : Styles.btnWrap}>
+              <ProductBtn title='極精品豆' bgc='#1a1a1a' link='/' />
+            </div>
+            <p className={isVisible3 ? `${Styles.productText} ${Styles.fadeIn}` : Styles.productText}>
+              出類拔萃 一時之選
+            </p>
+          </div>
+        </VisibilitySensor>
       </div>
       <section className={Styles.product2}>
         <div className={Styles.img}></div>
         <div className={Styles.info}>
-          <ProductItem text='頂尖之作 餘韻不斷' title='行家系列' bgc='#808080' link='/' />
-          <ProductItem text='狂銷熱賣 小資首選' title='經典系列' bgc='#4D4D4D' link='/' />
-          <ProductItem text='繽紛風味 簡單享受' title='單品系列' bgc='#1A1A1A' link='/' />
+          <VisibilitySensor onChange={onChange4} offset={{ top: 10 }} delayedCall partialVisibility>
+            <div className={isVisible4 ? `${Styles.productItem} ${Styles.show}` : Styles.productItem}>
+              <div className={isVisible4 ? `${Styles.btnWrap} ${Styles.rotateInL}` : Styles.btnWrap}>
+                <ProductBtn title='行家系列' bgc='#808080' link='/' />
+              </div>
+              <p className={isVisible4 ? `${Styles.productText} ${Styles.fadeIn}` : Styles.productText}>
+                頂尖之作 餘韻不斷
+              </p>
+            </div>
+          </VisibilitySensor>
+          <VisibilitySensor onChange={onChange5} offset={{ top: 10 }} delayedCall partialVisibility>
+            <div className={isVisible5 ? `${Styles.productItem} ${Styles.show}` : Styles.productItem}>
+              <div className={isVisible5 ? `${Styles.btnWrap} ${Styles.rotateInR}` : Styles.btnWrap}>
+                <ProductBtn title='經典系列' bgc='#4d4d4d' link='/' />
+              </div>
+              <p className={isVisible5 ? `${Styles.productText} ${Styles.fadeIn}` : Styles.productText}>
+                狂銷熱賣 小資首選
+              </p>
+            </div>
+          </VisibilitySensor>
+          <VisibilitySensor onChange={onChange6} offset={{ top: 10 }} delayedCall partialVisibility>
+            <div className={isVisible6 ? `${Styles.productItem} ${Styles.show}` : Styles.productItem}>
+              <div className={Styles.btnWrap}>
+                <ProductBtn title='單品系列' bgc='#1a1a1a' link='/' />
+              </div>
+              <p className={isVisible6 ? `${Styles.productText} ${Styles.fadeIn}` : Styles.productText}>
+                繽紛風味 簡單享受
+              </p>
+            </div>
+          </VisibilitySensor>
         </div>
       </section>
       <div className={Styles.infosm}>
-        <ProductItem text='頂尖之作 餘韻不斷' title='行家系列' bgc='#808080' link='/' />
-        <ProductItem text='狂銷熱賣 小資首選' title='經典系列' bgc='#4D4D4D' link='/' />
-        <ProductItem text='繽紛風味 簡單享受' title='單品系列' bgc='#1A1A1A' link='/' />
+        <VisibilitySensor onChange={onChange4} offset={{ top: 10 }} delayedCall partialVisibility>
+          <div className={isVisible4 ? `${Styles.productItem} ${Styles.show}` : Styles.productItem}>
+            <div className={isVisible4 ? `${Styles.btnWrap} ${Styles.rotateInL}` : Styles.btnWrap}>
+              <ProductBtn title='行家系列' bgc='#808080' link='/' />
+            </div>
+            <p className={isVisible4 ? `${Styles.productText} ${Styles.fadeIn}` : Styles.productText}>
+              頂尖之作 餘韻不斷
+            </p>
+          </div>
+        </VisibilitySensor>
+        <VisibilitySensor onChange={onChange5} offset={{ top: 10 }} delayedCall partialVisibility>
+          <div className={isVisible5 ? `${Styles.productItem} ${Styles.show}` : Styles.productItem}>
+            <div className={isVisible5 ? `${Styles.btnWrap} ${Styles.rotateInR}` : Styles.btnWrap}>
+              <ProductBtn title='經典系列' bgc='#4d4d4d' link='/' />
+            </div>
+            <p className={isVisible5 ? `${Styles.productText} ${Styles.fadeIn}` : Styles.productText}>
+              狂銷熱賣 小資首選
+            </p>
+          </div>
+        </VisibilitySensor>
+        <VisibilitySensor onChange={onChange6} offset={{ top: 10 }} delayedCall partialVisibility>
+          <div className={isVisible6 ? `${Styles.productItem} ${Styles.show}` : Styles.productItem}>
+            <div className={Styles.btnWrap}>
+              <ProductBtn title='單品系列' bgc='#1a1a1a' link='/' />
+            </div>
+            <p className={isVisible6 ? `${Styles.productText} ${Styles.fadeIn}` : Styles.productText}>
+              繽紛風味 簡單享受
+            </p>
+          </div>
+        </VisibilitySensor>
       </div>
     </>
   );
