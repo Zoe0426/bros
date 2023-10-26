@@ -27,6 +27,10 @@
   align-items: center;
 }
 
+.logoimg{
+  background-image: url(../../public/logo.png);
+}
+
 .links {
   display: flex;
 }
