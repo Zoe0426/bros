@@ -95,7 +95,7 @@ export default function Navbar({ type = "" }) {
             </button>
             {/* <Image src='/logo.png' alt='' className='logo' width={180} height={86} /> */}
             <Link href='/'>
-              <img src='bg1.jpeg' alt='' style={{ display: "none" }} />
+              <img src='bg1.jpeg' alt=''  />
               <img src='logo.png' alt='' />
             </Link>
           </div>
