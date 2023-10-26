@@ -162,7 +162,7 @@ export default function Home() {
         >
           <SwiperSlide>
             <Link href='/'>
-              <img src='../../public/大安門市.jpg' alt='' className={Styles.slideImg} />
+              <img src='/public/大安門市.jpg' alt='' className={Styles.slideImg} />
             </Link>
           </SwiperSlide>
           <SwiperSlide>
