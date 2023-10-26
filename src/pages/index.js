@@ -91,7 +91,6 @@ export default function Home() {
   const getTransformValue = () => {
     if (!elementPos) return windowWidth.width;
 
-
     let value = windowWidth.width - (elementPos - scrollPos) / 2;
     console.log("value", value);
     if (value < 0) value = 0;
@@ -162,52 +161,52 @@ export default function Home() {
         >
           <SwiperSlide>
             <Link href='/'>
-              <img src='/大安門市.jpg' alt='' className={Styles.slideImg} />
+              <img src='大安門市.jpg' alt='' className={Styles.slideImg} />
             </Link>
           </SwiperSlide>
           <SwiperSlide>
             <Link href='/'>
-              <img src='/public/台大門市.jpg' alt='' className={Styles.slideImg} />
+              <img src='台大門市.jpg' alt='' className={Styles.slideImg} />
             </Link>
           </SwiperSlide>
           <SwiperSlide>
             <Link href='/'>
-              <img src='../../public/市府門市.jpg' alt='' className={Styles.slideImg} />
+              <img src='市府門市.jpg' alt='' className={Styles.slideImg} />
             </Link>
           </SwiperSlide>
           <SwiperSlide>
             <Link href='/'>
-              <img src='../../public/瑞光門市.jpg' alt='' className={Styles.slideImg} />
+              <img src='瑞光門市.jpg' alt='' className={Styles.slideImg} />
             </Link>
           </SwiperSlide>
           <SwiperSlide>
             <Link href='/'>
-              <img src='../../public/高雄門市.jpg' alt='' className={Styles.slideImg} />
+              <img src='高雄門市.jpg' alt='' className={Styles.slideImg} />
             </Link>
           </SwiperSlide>
           <SwiperSlide>
             <Link href='/'>
-              <img src='../../public/大安門市.jpg' alt='' className={Styles.slideImg} />
+              <img src='大安門市.jpg' alt='' className={Styles.slideImg} />
             </Link>
           </SwiperSlide>
           <SwiperSlide>
             <Link href='/'>
-              <img src='../../public/台大門市.jpg' alt='' className={Styles.slideImg} />
+              <img src='台大門市.jpg' alt='' className={Styles.slideImg} />
             </Link>
           </SwiperSlide>
           <SwiperSlide>
             <Link href='/'>
-              <img src='/../../public/市府門市.jpg' alt='' className={Styles.slideImg} />
+              <img src='市府門市.jpg' alt='' className={Styles.slideImg} />
             </Link>
           </SwiperSlide>
           <SwiperSlide>
             <Link href='/'>
-              <img src='../../public/瑞光門市.jpg' alt='' className={Styles.slideImg} />
+              <img src='瑞光門市.jpg' alt='' className={Styles.slideImg} />
             </Link>
           </SwiperSlide>
           <SwiperSlide>
             <Link href='/'>
-              <img src='../../public/高雄門市.jpg' alt='' className={Styles.slideImg} />
+              <img src='高雄門市.jpg' alt='' className={Styles.slideImg} />
             </Link>
           </SwiperSlide>
         </Swiper>
