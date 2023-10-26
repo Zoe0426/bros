@@ -252,7 +252,7 @@ export default function Home() {
       </section>
       <div className={Styles.activeBall} ref={activeBallRef}>
         <img
-          src='/activeBall.png'
+          src='activeBall.png'
           alt=''
           className={Styles.ballImg}
           style={{ transform: `translateX(${getTransformValue()}px)` }}

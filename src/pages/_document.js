@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head>
-        <link rel='icon' href='/1697092782.ico' />
+        <link rel='icon' href='1697092782.ico' />
       </Head>
       <body>
         <Main />
