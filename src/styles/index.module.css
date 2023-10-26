@@ -30,7 +30,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url(/story.jpg);
+  background-image: url(../../public/story.jpg);
   background-position: bottom;
   background-size: cover;
   min-height: 90vh;
@@ -94,7 +94,7 @@
 }
 
 .bgColour {
-  background-image: url(/bgcolor_01.jpg);
+  background-image: url(../../public/bgcolor_01.jpg);
   width: 100%;
   height: 50vh;
   position: relative;
@@ -120,7 +120,7 @@
 }
 
 .product1 .img {
-  background-image: url(/productBg1_02.jpg);
+  background-image: url(../../public/productBg1_02.jpg);
   width: 100%;
   height: 60vw;
   background-size: contain;
@@ -128,7 +128,7 @@
 }
 
 .product2 .img {
-  background-image: url(/productBg2.jpg);
+  background-image: url(../../public/productBg2.jpg);
   width: 100%;
   height: 60vw;
   background-size: cover;
@@ -264,7 +264,7 @@
   }
 
   .product1 .img {
-    background-image: url(/productBg-sm1.jpg);
+    background-image: url(../../public/productBg-sm1.jpg);
     width: 100%;
     height: 85vw;
     background-size: cover;
@@ -272,7 +272,7 @@
   }
 
   .product2 .img {
-    background-image: url(/productBg-sm2.jpg);
+    background-image: url(../../public/productBg-sm2.jpg);
     width: 100%;
     height: 90vw;
     background-position: top center;
