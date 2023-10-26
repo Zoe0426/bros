@@ -167,7 +167,7 @@ export default function Home() {
           </SwiperSlide>
           <SwiperSlide>
             <Link href='/'>
-              <img src='../../public/台大門市.jpg' alt='' className={Styles.slideImg} />
+              <img src='/public/台大門市.jpg' alt='' className={Styles.slideImg} />
             </Link>
           </SwiperSlide>
           <SwiperSlide>
