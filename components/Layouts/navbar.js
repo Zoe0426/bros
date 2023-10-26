@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { Menu, ConfigProvider } from "antd";
 
+
 export default function Navbar({ type = "" }) {
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);
@@ -95,7 +96,7 @@ export default function Navbar({ type = "" }) {
             </button>
             {/* <Image src='/logo.png' alt='' className='logo' width={180} height={86} /> */}
             <Link href='/'>
-              <img src={process.env.PUBLIC_URL + "/logo.png"} alt='' />
+              <img src="/logo.png" alt='' />
             </Link>
           </div>
           <div className={Styles.links}>
