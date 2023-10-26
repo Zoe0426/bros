@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import Styles from "@/styles/index.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -57,6 +57,70 @@ export default function Home() {
   }, []);
 
   const smSlidePerView = is1024.width <= 1024 ? true : false;
+
+  const [windowWidth, setWindowWidth] = useState({ width: undefined });
+  const [windowHeight, setWindowHeight] = useState({ height: undefined });
+  const [scrollPos, setScrollPos] = useState(0);
+  const [elementPos, setElementPos] = useState(null);
+  const activeBallRef = useRef(null);
+
+  useEffect(() => {
+    setElementPos(activeBallRef.current.getBoundingClientRect().top);
+  }, []);
+
+  // 更新滚动位置和窗口宽度
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth({ width: window.innerWidth });
+    };
+
+    const handleScroll = () => {
+      setScrollPos(window.scrollY);
+      setWindowHeight({ height: window.innerHeight });
+    };
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const getTransformValue = () => {
+    if (!elementPos) return windowWidth.width;
+
+
+    let value = windowWidth.width - (elementPos - scrollPos) / 2;
+    console.log("value", value);
+    if (value < 0) value = 0;
+
+    return value;
+  };
+  console.log("scrollPos", scrollPos);
+  console.log("elementPos", elementPos);
+  console.log("windowWidth", windowWidth);
+  console.log("is1024", is1024);
+  console.log("windowHeight", windowHeight);
+
+  // 監聽滾動
+  // const [scrollPos, setScrollPos] = useState(0);
+
+  // useEffect(() => {
+  //   // 定義用於更新滾動距離的函數
+  //   const updateScrollPos = () => {
+  //     setScrollPos(window.scrollY);
+  //   };
+
+  //   // 當組件裝載和更新時，添加滾動監聽器
+  //   window.addEventListener("scroll", updateScrollPos);
+
+  //   // 當組件卸載時，移除滾動監聽器
+  //   return () => window.removeEventListener("scroll", updateScrollPos);
+  // }, []); // 為 useEffect 添加空數組作為依賴項列表，意味著這個 effect 只有在初次裝載和卸載時運行
+
+  // console.log("scrollPos", scrollPos);
 
   return (
     <>
@@ -187,6 +251,14 @@ export default function Home() {
           </VisibilitySensor>
         </div>
       </section>
+      <div className={Styles.activeBall} ref={activeBallRef}>
+        <img
+          src='/activeBall.png'
+          alt=''
+          className={Styles.ballImg}
+          style={{ transform: `translateX(${getTransformValue()}px)` }}
+        />
+      </div>
       <div className={Styles.infosm}>
         <VisibilitySensor onChange={onChange1} offset={{ top: 10 }} delayedCall partialVisibility>
           <div className={isVisible1 ? `${Styles.productItem} ${Styles.show}` : Styles.productItem}>

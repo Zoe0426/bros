@@ -158,7 +158,7 @@ export default function Navbar({ type = "" }) {
           components: {
             Menu: {
               /* here is your component tokens */
-              itemHoverColor: "#ff6347",
+              itemHoverColor: "#fea200",
               itemActiveBg: "none",
               itemSelectedBg: "none",
               itemSelectedColor: "rgba(0, 0, 0, 0.88)",

@@ -79,7 +79,7 @@
 }
 
 .linkItem a:hover {
-  color: var(--ltOrg);
+  color: var(--ltYellow);
 }
 
 .linkItem:hover .dropdown {
@@ -107,7 +107,7 @@
 
 .iconCart:hover,
 .iconUser:hover {
-  color: var(--ltOrg);
+  color: var(--ltYellow);
 }
 
 .darkWrap {
