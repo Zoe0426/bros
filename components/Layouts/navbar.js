@@ -94,10 +94,10 @@ export default function Navbar({ type = "" }) {
             <button className={Styles.navToggler} onClick={handleClick}>
               <div className={`${Styles.line} ${isActive ? Styles.active : ""}`}></div>
             </button>
-            {/* <Image src='/logo.png' alt='' className='logo' width={180} height={86} /> */}
-            <Link href='/'>
-              <img src="/logo.png" alt='' />
-            </Link>
+            <Image src='/logo.png' alt='' className='logo' width={180} height={86} />
+              {/* <Link href='/'>
+                <img src="/logo.png" alt='' />
+              </Link> */}
           </div>
           <div className={Styles.links}>
             <div className={Styles.linkMenu}>
