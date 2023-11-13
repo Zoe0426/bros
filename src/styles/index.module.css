@@ -5,6 +5,7 @@
   background-position: center;
   width: 100%;
   min-height: 100vh;
+  margin-top: -75px;
   background-color: rgba(0, 0, 0, 0.6);
   background-blend-mode: multiply;
   color: white;
@@ -13,7 +14,6 @@
   justify-content: center;
   flex-direction: column;
 }
-
 
 .jbTitle {
   font-size: 95px;
